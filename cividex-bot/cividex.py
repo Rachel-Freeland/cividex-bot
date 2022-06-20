@@ -1,10 +1,13 @@
 from os import environ as env
-from retrieve_tweet import fetch_tweet()
+from dotenv import load_dotenv
+# from retrieve_tweet import fetch_tweet()
 import tweepy
+
+load_dotenv()
 
 # Set Variables for .env
 consumer_key = env['CONSUMER_KEY']
-consumer_secret = env['CONSUMER_SECRET']
+consumer_secret = env['CONSUMER_KEY_SECRET']
 access_token = env ['ACCESS_TOKEN']
 access_token_secret = env ['ACCESS_TOKEN_SECRET']
 
@@ -26,8 +29,8 @@ def authenticate():
 
 def main():
     api = authenticate()
-    
 
+    api.update_status('Hello World')
 
 
 if __name__ == "__main__":
