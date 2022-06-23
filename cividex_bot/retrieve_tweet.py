@@ -28,7 +28,6 @@ class Helper:
 
         response = requests.post(token_route, login_data)
         token = response.json()
-        print(token)
         jwt = token["access"]
         headers = {"Authorization": ("Bearer " + jwt)}
         response = requests.get(database_route, headers=headers)
