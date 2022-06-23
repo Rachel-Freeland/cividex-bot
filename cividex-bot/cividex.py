@@ -36,18 +36,16 @@ def main():
     api = authenticate()
     # api.update_status('Hello World')
 
-    helper.retrieve_tweet()
-    
-    tweet_content = "hello world"
+    tweet = helper.retrieve_tweet()
+    tweet = formatter.format_tweet(tweet)
+    tweet_content = tweet
 
     try:
-
+        api.update_status(status=tweet_content)
+        print('tweet has been tweeted')
     except Exception as error:
-        print(f"An error occurred while generating image. reason: {error}")
-
-    api.update_status(status=tweet_content) 
-
-    print('tweet has been tweeted')
+        print(f"An error occurred while tweeting. Reason: {error}")
+  
 
 if __name__ == "__main__":
     main()
