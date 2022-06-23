@@ -38,6 +38,6 @@ class Formatter():
             source = data['source']
             date_ = data['date']
 
-            tweet_content = f"Type of rights: {flags} \n On {date_}: {fact} \n Source: {source}"
+            tweet_content = f"Type of rights: {flags} \nOn {date_}: {fact} \n Source: {source}"
             print(tweet_content)
             return tweet_content          
