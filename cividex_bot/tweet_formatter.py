@@ -15,8 +15,8 @@ class Formatter():
         '''
         if data is None:
             cur_day_mon = str(date.today())[5:]
-            string = f"We do not have anything for \n {cur_day_mon} in our database. "
-            print(string)
+            string = f"We do not have anything for {cur_day_mon} in our database.\nIf you would like to contribute you can go to\nhttps://cividex-frontend.vercel.app/\nto add facts."
+            return string
 
         if len(data) >= 1:
 

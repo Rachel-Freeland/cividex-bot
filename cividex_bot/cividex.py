@@ -1,6 +1,7 @@
 from os import environ as env
 from dotenv import load_dotenv
 import tweepy
+import time
 from tweet_formatter import Formatter
 from retrieve_tweet import Helper
 
@@ -37,6 +38,8 @@ def main():
     # api.update_status('Hello World')
 
     tweet = helper.retrieve_tweet()
+    tweet = helper.request_parser(tweet)
+    tweet = helper.date_filter(tweet)
     tweet = formatter.format_tweet(tweet)
     tweet_content = tweet
 
@@ -48,4 +51,7 @@ def main():
   
 
 if __name__ == "__main__":
+
+    INTERVAL = 60*60*24 # Set timer for 24 hours
     main()
+    time.sleep(INTERVAL)
