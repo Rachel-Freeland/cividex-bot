@@ -32,7 +32,7 @@ class Helper:
         fact_url = "https://cividex.herokuapp.com/api/v1/facts/"
         response = requests.get(fact_url, headers=headers)
 
-        return self.request_parser(response.json())
+        return response.json()
 
     def request_parser(self, data):
         """
