@@ -21,22 +21,23 @@ class Formatter():
         if len(data) >= 1:
 
             data = random.sample(data, 1)
+            data = data[0]
             # Grab flag for type of rights -= Done this way to potentailly account for possibility of using multi-flags
             flags = data['flags']
-            if 'c' in flags:
+            if flags == 'c':
                 self.flags.append('Civil')
-            if 'v' in flags:
+            if flags == 'v':
                 self.flags.append('Voting')
-            if 's' in flags:
+            if flags == 's':
                 self.flags.append('Slavery')
-            if 'z' in flags:
+            if flags == 'z':
                 self.flags.append('Citizenship')
             flags = self.flags[0]
 
-            fact = data['facts']
+            fact = data['fact']
             source = data['source']
             date_ = data['date']
 
-            tweet_content = f"Type of rights: {flags} \n on {date_} {fact} \n Source: {source}"
+            tweet_content = f"Type of rights: {flags} \n On {date_}: {fact} \n Source: {source}"
             print(tweet_content)
             return tweet_content          
