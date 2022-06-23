@@ -1,3 +1,5 @@
 # Docs:  https://pillow.readthedocs.io/en/stable/reference/Image.ht
 
-from PIL import Image, ImageDraw
+#TODO: Allow generation of image tweets
+
+# from PIL import Image, ImageDraw
