@@ -1,1 +1,1 @@
-worker: cd cividex_bot && python cividex.py
+worker: cd cividex_bot && python3 cividex.py
