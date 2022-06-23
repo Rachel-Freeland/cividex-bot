@@ -1,7 +1,12 @@
 from os import environ as env
 from dotenv import load_dotenv
-# from retrieve_tweet import fetch_tweet()
 import tweepy
+from tweet_formatter import Formatter
+from retrieve_tweet import Helper
+
+formatter = Formatter()
+helper = Helper()
+
 
 load_dotenv()
 
@@ -25,13 +30,24 @@ def authenticate():
     except Exception as error:
         print(f'Unable to access and authenticate twitter API. Reason: {error}')
 
-# Main runtime
 
+# Main runtime
 def main():
     api = authenticate()
+    # api.update_status('Hello World')
 
-    api.update_status('Hello World')
+    helper.retrieve_tweet()
+    
+    tweet_content = "hello world"
 
+    try:
+
+    except Exception as error:
+        print(f"An error occurred while generating image. reason: {error}")
+
+    api.update_status(status=tweet_content) 
+
+    print('tweet has been tweeted')
 
 if __name__ == "__main__":
     main()
