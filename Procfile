@@ -1,0 +1,1 @@
+worker: cd cividex_bot && python cividex.py
